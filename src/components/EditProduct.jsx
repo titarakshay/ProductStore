@@ -74,70 +74,104 @@ class EditProduct extends React.Component {
     const { budget, premier } = this.props.state.pricingInfo;
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="">Product Name</label>
-        <input
-          type="text"
-          value={name}
-          onChange={this.handleInput}
-          name="name"
-        />
-        <label htmlFor="">Product PricingTier</label>
-        <label htmlFor="pricingTier">Premier</label>
-        <input
-          type="radio"
-          name="premier"
-          checked={pricingTier === "premier"}
-          onChange={this.handleRadio}
-          value="premier"
-        />
-        <label htmlFor="pricingTier">Budget</label>
-        <input
-          type="radio"
-          name="budget"
-          checked={pricingTier === "budget"}
-          onChange={this.handleRadio}
-          value="budget"
-        />
-        <label htmlFor="">Product PriceRange</label>
-        {pricingTier === "budget" ? (
-          <PriceList
-            prices={budget}
-            price={priceRange}
-            change={this.handleInput}
-          />
-        ) : (
-          <PriceList
-            prices={premier}
-            price={priceRange}
-            change={this.handleInput}
-          />
-        )}
-        <label htmlFor="">Product Availability</label>
-        <input
-          type="number"
-          name="availability"
-          onChange={this.handleInput}
-          value={availability}
-        />
-        <label htmlFor="">Product Weight</label>
-        <input
-          type="text"
-          name="weight"
-          onChange={this.handleInput}
-          value={weight}
-        />
-        <label htmlFor="">Product Editable</label>
-        <input
-          type="checkbox"
-          name="isEditable"
-          onChange={this.handleInput}
-          checked={isEditable}
-        />
-        <button disabled={disable} type="submit">
-          Submit
-        </button>
-      </form>
+      <div className="form-wrapper">
+        <div className="form-heading">
+          <h1>Product Edit From</h1>
+        </div>
+        <div className="outer-box">
+          <form onSubmit={this.handleSubmit}>
+            <label className="label my-3" htmlFor="">
+              Product Name
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              value={name}
+              onChange={this.handleInput}
+              name="name"
+            />
+            <div>
+              <label className="label mr-3 my-3" htmlFor="">
+                Product PricingTier-:
+              </label>
+              <label className="label mr-3 my-3" htmlFor="pricingTier">
+                Premier
+              </label>
+              <input
+                type="radio"
+                name="premier"
+                className="mr-3 my-3"
+                checked={pricingTier === "premier"}
+                onChange={this.handleRadio}
+                value="premier"
+              />
+              <label className="label mr-3 my-3" htmlFor="pricingTier">
+                Budget
+              </label>
+              <input
+                type="radio"
+                name="budget"
+                className="mr-3"
+                checked={pricingTier === "budget"}
+                onChange={this.handleRadio}
+                value="budget"
+              />
+            </div>
+            <div>
+              <label className="label mr-3 my-3" htmlFor="">
+                Product PriceRange
+              </label>
+              {pricingTier === "budget" ? (
+                <PriceList
+                  prices={budget}
+                  price={priceRange}
+                  change={this.handleInput}
+                />
+              ) : (
+                <PriceList
+                  prices={premier}
+                  price={priceRange}
+                  change={this.handleInput}
+                />
+              )}
+            </div>
+            <label htmlFor="">Product Availability</label>
+            <input
+              className="form-control my-3"
+              type="number"
+              name="availability"
+              onChange={this.handleInput}
+              value={availability}
+            />
+            <label htmlFor="" className="my-3">
+              Product Weight
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="weight"
+              onChange={this.handleInput}
+              value={weight}
+            />
+            <label htmlFor="" className="my-3 mr-3">
+              Product Editable
+            </label>
+            <input
+              type="checkbox"
+              name="isEditable"
+              onChange={this.handleInput}
+              checked={isEditable}
+            />
+            <button
+              disabled={disable}
+              className="btn my-3 block-form btn-primary"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
     );
   }
 }

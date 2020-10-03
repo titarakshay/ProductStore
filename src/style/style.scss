@@ -134,7 +134,7 @@ table {
 }
 
 body {
-  font-size: 16px;
+  font-size: 1.2rem;
   line-height: 1.2;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -152,10 +152,76 @@ body {
     font-size: 1.4rem;
     color: #4cbef1;
   }
+  img {
+    width: 5rem;
+  }
 }
 
 // product-wrapper css
 
 .products-wrapper {
   padding-top: 3rem;
+}
+
+// edit-form
+.form-wrapper {
+  margin-top: 2rem;
+  .form-heading {
+    margin: 2rem;
+    text-align: center;
+    // color: ;
+  }
+}
+.outer-box {
+  display: block;
+  margin-top: 4rem;
+  padding: 20px 25px;
+  border: solid 1px rgba(216, 216, 216, 0.5);
+  border-radius: 4px;
+  font-family: "Camphor";
+  color: #787887;
+  width: 450px;
+  margin: 0 auto;
+  .form-control {
+    width: 100%;
+    outline: none;
+    border-radius: 2px;
+    border: solid 1px #cacad3;
+    height: 35px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    margin-bottom: 20px;
+    outline: none;
+  }
+}
+
+.label {
+  padding-bottom: 0.3rem;
+}
+
+.block-form {
+  display: block;
+}
+// selection wrapper
+.select-wrapper {
+  width: 9rem;
+}
+
+// media queries
+@media screen and (max-width: 769px) {
+  .products-wrapper {
+    font-size: 12px;
+  }
+  .media-font {
+    h1,
+    h2 {
+      font-size: 1rem;
+    }
+    img {
+      width: 3rem;
+    }
+  }
 }
