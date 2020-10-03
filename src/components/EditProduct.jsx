@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PriceList from "./PriceList";
 import { handleSubmitAction } from "../store/action";
+import { NavLink } from "react-router-dom";
 
 class EditProduct extends React.Component {
   state = {
@@ -74,7 +75,8 @@ class EditProduct extends React.Component {
     const { budget, premier } = this.props.state.pricingInfo;
 
     return (
-      <div className="form-wrapper">
+      <div className="form-wrapper container">
+        <NavLink to="/">Back</NavLink>
         <div className="form-heading">
           <h1>Product Edit From</h1>
         </div>
@@ -105,17 +107,19 @@ class EditProduct extends React.Component {
                 onChange={this.handleRadio}
                 value="premier"
               />
-              <label className="label mr-3 my-3" htmlFor="pricingTier">
-                Budget
-              </label>
-              <input
-                type="radio"
-                name="budget"
-                className="mr-3"
-                checked={pricingTier === "budget"}
-                onChange={this.handleRadio}
-                value="budget"
-              />
+              <div className="inline block">
+                <label className="label mr-3 my-3" htmlFor="pricingTier">
+                  Budget
+                </label>
+                <input
+                  type="radio"
+                  name="budget"
+                  className="mr-3"
+                  checked={pricingTier === "budget"}
+                  onChange={this.handleRadio}
+                  value="budget"
+                />
+              </div>
             </div>
             <div>
               <label className="label mr-3 my-3" htmlFor="">

@@ -7,15 +7,18 @@ class HomePage extends React.Component {
     const { products } = this.props.state;
 
     return (
-      <div className="products-wrapper">
+      <div className="products-wrapper container">
+        <div className="align-center">
+          <h1>Product Details</h1>
+        </div>
         <table className="table">
           <thead className="thead-dark">
             <tr>
-              <th scope="col">name</th>
-              <th scope="col">pricingTier</th>
-              <th scope="col">priceRange</th>
-              <th scope="col"> availability</th>
-              <th scope="col">weight(In gms)</th>
+              <th scope="col">Name</th>
+              <th scope="col">PricingTier</th>
+              <th scope="col">PriceRange</th>
+              <th scope="col">Availability</th>
+              <th scope="col">Weight(In gms)</th>
               <th scope="col">Editable</th>
             </tr>
           </thead>
