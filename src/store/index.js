@@ -12,7 +12,7 @@ function reducer(state = intialState, action) {
       return {
         ...state,
         products: state.products.map((product, i) => {
-          if (i == action.payload.id) {
+          if (i === Number(action.payload.id)) {
             product = action.payload;
             return product;
           }
