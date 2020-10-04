@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import "react-bootstrap";
 import "bootstrap";
 import "jquery/dist/jquery.js";
@@ -10,10 +9,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import EditProduct from "./components/EditProduct.jsx";
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
-    const { products } = this.props.state;
-    console.log(products);
     return (
       <>
         <BrowserRouter>
@@ -27,9 +24,3 @@ class App extends React.Component {
     );
   }
 }
-
-function mapState(state) {
-  return { state };
-}
-
-export default connect(mapState)(App);
