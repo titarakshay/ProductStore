@@ -33,7 +33,6 @@ class EditProduct extends React.Component {
       priceRange: singleProduct.priceRange,
       weight: singleProduct.weight,
       availability: singleProduct.availability,
-      isEditable: singleProduct.isEditable,
       productUrl: singleProduct.productUrl,
     });
   }
@@ -81,9 +80,12 @@ class EditProduct extends React.Component {
           <h1>Product Edit From</h1>
         </div>
         <div className="outer-box">
+          <h4>
+            <span className="span">*Please fill required fields</span>
+          </h4>
           <form onSubmit={this.handleSubmit}>
             <label className="label my-3" htmlFor="">
-              Product Name
+              <span className="span">*</span>Product Name
             </label>
             <input
               className="form-control"
@@ -94,7 +96,7 @@ class EditProduct extends React.Component {
             />
             <div>
               <label className="label mr-3 my-3" htmlFor="">
-                Product PricingTier-:
+                <span className="span">*</span>Product PricingTier-:
               </label>
               <label className="label mr-3 my-3" htmlFor="pricingTier">
                 Premier
@@ -123,7 +125,7 @@ class EditProduct extends React.Component {
             </div>
             <div>
               <label className="label mr-3 my-3" htmlFor="">
-                Product PriceRange
+                <span className="span">*</span>Product PriceRange
               </label>
               {pricingTier === "budget" ? (
                 <PriceList
@@ -148,7 +150,7 @@ class EditProduct extends React.Component {
               value={availability}
             />
             <label htmlFor="" className="my-3">
-              Product Weight
+              <span className="span">*</span>Product Weight
             </label>
             <input
               className="form-control"
@@ -158,11 +160,12 @@ class EditProduct extends React.Component {
               value={weight}
             />
             <label htmlFor="" className="my-3 mr-3">
-              Product Editable
+              <span className="span">*</span>Product Editable
             </label>
             <input
               type="checkbox"
               name="isEditable"
+              className="edit-checkbox"
               onChange={this.handleInput}
               checked={isEditable}
             />

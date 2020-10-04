@@ -196,6 +196,10 @@ body {
   color: #787887;
   width: 450px;
   margin: 0 auto;
+  h4 {
+    font-size: 0.8rem;
+    margin: 1rem 0;
+  }
   .form-control {
     width: 100%;
     outline: none;
@@ -211,7 +215,13 @@ body {
     outline: none;
   }
 }
-
+.edit-checkbox {
+  width: 1rem;
+  height: 1rem;
+}
+.span {
+  color: red;
+}
 .label {
   padding-bottom: 0.3rem;
 }
@@ -240,5 +250,12 @@ body {
   }
   .block {
     display: block;
+  }
+  .align-center {
+    text-align: center;
+    margin: 1rem;
+    h1 {
+      font-size: 1.5rem;
+    }
   }
 }
